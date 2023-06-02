@@ -1,6 +1,13 @@
-<script setup></script>
+<script setup>
+import Calculation from "./CalculationSection/calculation.vue";
+</script>
 <template>
-  <div class="container"></div>
+  <div class="tipContainer">
+    <div class="tipContainerItem">
+      <Calculation />
+    </div>
+    <div class="tipContainerItem"></div>
+  </div>
 </template>
 
 <style scoped>
@@ -12,9 +19,12 @@
   /* h1 {
     @apply font-bold underline;
   } */
-  .container {
-    @apply h-3/5 w-3/5 rounded-2xl;
+  .tipContainer {
+    @apply w-3/5 rounded-2xl p-10;
     background-color: #fff;
+  }
+  .tipContainerItem {
+    @apply w-1/2;
   }
 }
 </style>

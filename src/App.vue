@@ -9,6 +9,7 @@ import TipContainer from "./components/TipContainer.vue";
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,6 +19,7 @@ import TipContainer from "./components/TipContainer.vue";
     @apply font-bold underline;
   } */
   .container {
+    font-family: "Roboto Mono", sans-serif;
     @apply flex justify-center items-center w-full h-screen;
     background-color: #e6fffd;
   }

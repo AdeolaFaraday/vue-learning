@@ -38,7 +38,7 @@ import Input from "../input/input.vue";
     @apply flex flex-row flex-wrap gap-4;
   }
   .sectionContainer {
-    @apply mb-10;
+    @apply mb-12;
   }
 }
 </style>

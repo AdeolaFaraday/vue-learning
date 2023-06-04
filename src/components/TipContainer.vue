@@ -4,12 +4,15 @@ import ResultContainer from "./ResultContainer/ResultContainer.vue";
 import Text from "./Text/text.vue";
 </script>
 <template>
-  <div class="tipContainer">
-    <div class="tipContainerItem">
-      <Calculation />
-    </div>
-    <div class="tipContainerItem">
-      <ResultContainer />
+  <div class="flex flex-col w-full items-center">
+    <Text class="h-10 mb-5">SLIPTER</Text>
+    <div class="tipContainer">
+      <div class="tipContainerItem">
+        <Calculation />
+      </div>
+      <div class="tipContainerItem">
+        <ResultContainer />
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +27,7 @@ import Text from "./Text/text.vue";
     @apply font-bold underline;
   } */
   .tipContainer {
-    @apply flex-col lg:flex-row lg:w-3/5 w-full lg:rounded-2xl rounded-t-3xl lg:p-10 p-6 flex justify-stretch gap-8 mt-12 lg:mt-0;
+    @apply flex-col lg:flex-row lg:w-3/5 w-full lg:rounded-2xl rounded-t-3xl lg:p-10 p-6 flex justify-stretch gap-8;
     background-color: #fff;
     box-shadow: 25px 25px 50px 25px rgb(0 0 0 / 0.1);
     @media screen(lg) {

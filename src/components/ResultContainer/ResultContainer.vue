@@ -1,5 +1,18 @@
 <script setup>
 import Text from "../Text/text.vue";
+
+const props = defineProps({
+  perPersonResult: {
+    type: Number,
+    default: 0,
+  },
+  tipAmount: {
+    type: Number,
+    default: 0,
+  },
+});
+
+console.log({ props: props.tipAmount });
 </script>
 
 <template>
@@ -11,7 +24,7 @@ import Text from "../Text/text.vue";
           <Text>/ person</Text>
         </div>
         <div>
-          <h1 class="amount">$0.00</h1>
+          <h1 class="amount">${{ tipAmount.toFixed(2) }}</h1>
         </div>
       </div>
       <div class="tipItem">
@@ -20,7 +33,7 @@ import Text from "../Text/text.vue";
           <Text>/ person</Text>
         </div>
         <div>
-          <h1 class="amount">$0.00</h1>
+          <h1 class="amount">${{ perPersonResult.toFixed(2) }}</h1>
         </div>
       </div>
     </div>

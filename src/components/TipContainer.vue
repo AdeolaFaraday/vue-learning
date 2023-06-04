@@ -1,17 +1,55 @@
 <script setup>
+import { reactive, ref, watch } from "vue";
 import Calculation from "./CalculationSection/calculation.vue";
 import ResultContainer from "./ResultContainer/ResultContainer.vue";
 import Text from "./Text/text.vue";
+
+let billValue = ref(0);
+let noOfPeopleValue = ref(0);
+let percentClick = ref(0);
+
+let perPersonResult = ref(0);
+let tipAmount = ref(0);
+
+const calculationObject = reactive({
+  billValue: 0,
+  noOfPeopleValue: 0,
+  percentClick: 0,
+});
+
+const handleBillsChange = (value) => {
+  billValue.value = +value;
+};
+
+const handlePeopleChange = (value) => {
+  noOfPeopleValue.value = +value;
+};
+const handlePercentClick = (value) => {
+  percentClick.value = +value;
+};
+
+watch([billValue, noOfPeopleValue, percentClick], (newState, oldState) => {
+  tipAmount.value = (+billValue.value * newState[2]) / 100;
+  perPersonResult.value =
+    +billValue.value + tipAmount.value / +noOfPeopleValue.value;
+});
 </script>
 <template>
   <div class="flex flex-col w-full items-center">
     <Text class="h-10 mb-5">SLIPTER</Text>
     <div class="tipContainer">
       <div class="tipContainerItem">
-        <Calculation />
+        <Calculation
+          @bill-input-change="handleBillsChange"
+          @people-no-change="handlePeopleChange"
+          @percent-click="handlePercentClick"
+        />
       </div>
       <div class="tipContainerItem">
-        <ResultContainer />
+        <ResultContainer
+          :tip-amount="+tipAmount"
+          :per-person-result="+perPersonResult"
+        />
       </div>
     </div>
   </div>

@@ -5,9 +5,12 @@ defineProps({
     required: true,
   },
 });
+defineEmits(["percent-click"]);
 </script>
 <template>
-  <div class="buttonContainer">{{ text }}</div>
+  <div @click="$emit('percent-click', text)" class="buttonContainer">
+    {{ text + "%" }}
+  </div>
 </template>
 
 <style scoped>

@@ -29,9 +29,9 @@ const handlePercentClick = (value) => {
 };
 
 watch([billValue, noOfPeopleValue, percentClick], (newState, oldState) => {
-  tipAmount.value = (+billValue.value * newState[2]) / 100;
-  perPersonResult.value =
-    +billValue.value + tipAmount.value / +noOfPeopleValue.value;
+  const tipCal = (+billValue.value * newState[2]) / 100;
+  tipAmount.value = tipCal;
+  perPersonResult.value = noOfPeopleValue.value > 0 ? (+billValue.value + tipCal) / +noOfPeopleValue.value : 0;
 });
 </script>
 <template>

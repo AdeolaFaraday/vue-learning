@@ -20,7 +20,10 @@ defineProps({
     @apply h-10 text-white text-xl font-semibold rounded flex justify-center items-center cursor-pointer;
     font-family: "Space Mono", sans-serif;
     background-color: #245953;
-    width: calc(33.4% - 1rem);
+    width: calc(50% - 1rem);
+    @media screen(lg) {
+      width: calc(33.4% - 1rem);
+    }
   }
 }
 </style>

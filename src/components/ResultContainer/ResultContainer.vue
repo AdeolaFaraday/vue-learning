@@ -4,7 +4,7 @@ import Text from "../Text/text.vue";
 
 <template>
   <div class="container">
-    <div>
+    <div class="mb-10">
       <div class="tipItem mb-12">
         <div>
           <Text style="color: #fff">Tip Amount</Text>

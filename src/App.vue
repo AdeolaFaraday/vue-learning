@@ -17,7 +17,7 @@ import TipContainer from "./components/TipContainer.vue";
 @layer components {
   .container {
     font-family: "Roboto Mono", sans-serif;
-    @apply flex justify-center items-center max-w-full h-screen;
+    @apply flex justify-center lg:items-center items-end max-w-full h-screen;
     background-color: #e6fffd;
   }
 }

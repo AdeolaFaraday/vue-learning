@@ -4,11 +4,18 @@ defineProps({
     type: String,
     required: true,
   },
+  buttonClicked: {
+    type: String,
+  },
 });
 defineEmits(["percent-click"]);
 </script>
 <template>
-  <div @click="$emit('percent-click', text)" class="buttonContainer">
+  <div
+    @click="$emit('percent-click', text)"
+    class="buttonContainer"
+    :class="{ buttonContainerActive: buttonClicked === text }"
+  >
     {{ text + "%" }}
   </div>
 </template>
@@ -27,6 +34,9 @@ defineEmits(["percent-click"]);
     @media screen(lg) {
       width: calc(33.4% - 1rem);
     }
+  }
+  .buttonContainerActive {
+    background-color: #00dfa2;
   }
 }
 </style>

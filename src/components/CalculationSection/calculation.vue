@@ -1,7 +1,10 @@
 <script setup>
+import { ref } from "vue";
 import PercentButton from "../PercentButton/PercentButton.vue";
 import Text from "../Text/text.vue";
 import Input from "../input/input.vue";
+
+const buttonClicked = ref(null);
 
 const emit = defineEmits(["bill-input-change", "people-no-change"]);
 const handleBillsChange = (value) => {
@@ -13,6 +16,7 @@ const handlePeopleChange = (value) => {
 
 const handlePercentClick = (value) => {
   emit("percent-click", value);
+  buttonClicked.value = value;
 };
 </script>
 <template>
@@ -27,6 +31,7 @@ const handlePercentClick = (value) => {
         <PercentButton
           v-for="item in ['5', '10', '15', '25', '50']"
           :text="item"
+          :buttonClicked="buttonClicked"
           @percent-click="handlePercentClick"
         />
       </div>

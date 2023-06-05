@@ -30,13 +30,13 @@ const handlePercentClick = (value) => {
 
 watch([billValue, noOfPeopleValue, percentClick], (newState, oldState) => {
   const tipCal = (+billValue.value * newState[2]) / 100;
-  tipAmount.value = tipCal;
+  tipAmount.value = noOfPeopleValue.value > 0 ? tipCal / +noOfPeopleValue.value : 0;
   perPersonResult.value = noOfPeopleValue.value > 0 ? (+billValue.value + tipCal) / +noOfPeopleValue.value : 0;
 });
 </script>
 <template>
   <div class="flex flex-col w-full items-center">
-    <Text class="h-10 mb-5">SLIPTER</Text>
+    <img class="h-10 mb-5" src="../assets/logo.svg" />
     <div class="tipContainer">
       <div class="tipContainerItem">
         <Calculation

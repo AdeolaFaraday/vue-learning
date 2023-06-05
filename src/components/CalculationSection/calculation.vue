@@ -19,7 +19,7 @@ const handlePercentClick = (value) => {
   <div class="container">
     <div class="sectionContainer">
       <Text class="m-2">Bills</Text>
-      <Input @input-change="handleBillsChange" />
+      <Input @input-change="handleBillsChange" icon="icon-dollar.svg" />
     </div>
     <div class="sectionContainer">
       <Text class="mb-4">Select Tip%</Text>
@@ -33,7 +33,7 @@ const handlePercentClick = (value) => {
     </div>
     <div>
       <Text class="m-2">Number of people</Text>
-      <Input @input-change="handlePeopleChange" />
+      <Input icon="icon-person.svg" @input-change="handlePeopleChange" />
     </div>
   </div>
 </template>
